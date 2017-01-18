@@ -1,3 +1,6 @@
 [submodule "Linux-101"]
 	path = Linux-101
 	url = git@github.com:shreyawhiz/Linux-101.git
+[submodule "javascript-made-ez"]
+	path = javascript-made-ez
+	url = git@github.com:shreyawhiz/javascript-made-ez.git
