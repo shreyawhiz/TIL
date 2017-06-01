@@ -1,3 +1,4 @@
+```javascript
 eb list
 eb health
 eb ssh
@@ -11,3 +12,4 @@ eb logs
 eb status
 eb terminate
 eb use
+```
