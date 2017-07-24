@@ -74,6 +74,7 @@ Move into the new directory that contains our StatsD files:
 	`cd statsd`
 	
 	
+	
 Now, we can create the StatsD package by simply issuing this command:
 	`dpkg-buildpackage`
 	
@@ -98,22 +99,17 @@ This resolved the issue.
 	
 ### Statsd is now loaded as a node application in your system.
 
+```javascript
 `➜  ~ ls /usr/share/statsd`
 
-`drwxr-xr-x  2 root root  4096 Mar  8 15:27 backends`
-
-`drwxr-xr-x  2 root root  4096 Mar  8 15:27 lib`
-
-`drwxr-xr-x 34 root root  4096 Mar  8 19:01 node_modules`
-
-`-rw-r--r--  1 root root  1112 Mar  6 13:30 package.json`
-
-`-rw-r--r--  1 root root  8369 Mar  6 13:30 proxy.js`
-
-`drwxr-xr-x  2 root root  4096 Mar  8 15:27 servers`
-
-`-rw-r--r--  1 root root 14388 Mar  6 13:30 stats.js`	
-
+drwxr-xr-x  2 root root  4096 Mar  8 15:27 backends
+drwxr-xr-x  2 root root  4096 Mar  8 15:27 lib
+drwxr-xr-x 34 root root  4096 Mar  8 19:01 node_modules
+-rw-r--r--  1 root root  1112 Mar  6 13:30 package.json
+-rw-r--r--  1 root root  8369 Mar  6 13:30 proxy.js
+drwxr-xr-x  2 root root  4096 Mar  8 15:27 servers
+-rw-r--r--  1 root root 14388 Mar  6 13:30 stats.js
+```
 
 
 ### start statsd service
@@ -125,23 +121,24 @@ This resolved the issue.
 ## Configure StatsD
 
 The first thing that we should do is modify the StatsD configuration file.
-
-	`➜  ~ ls /etc/statsd `
-	
-	`-rw-r--r-- 1 root root 312 Mar  8 19:10 localConfig.js`
-	
-	`-rw-r--r-- 1 root root 169 Mar  6 13:30 proxyConfig.js`
-	
+```javascript
+	➜  ~ ls /etc/statsd
+	-rw-r--r-- 1 root root 312 Mar  8 19:10 localConfig.js
+	-rw-r--r-- 1 root root 169 Mar  6 13:30 proxyConfig.js
+```
 
 Open localConfig in your local editor or vi
 
 It should look like this:
 
-`{`
-`  graphitePort: 2003`
-`, graphiteHost: "localhost"`
-`, port: 8125`
-`}`
+```javascript
+{
+  graphitePort: 2003
+, graphiteHost: "graphite.example.com"
+, port: 8125
+, backends: [ "./backends/console" ]
+}
+```
 
 StatsD configuration file by default is configured to be used by Graphite backend.
 
