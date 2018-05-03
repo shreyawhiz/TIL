@@ -23,3 +23,25 @@ def print_name_using_prompt_input():
 	print "Name entered is %s" %name
 
 print_name_using_prompt_input()
+
+
+def print_args(*args):
+	arg1, arg2 = args
+	print "arg1: %s and arg2: %s" %(arg1,arg2)
+
+print_args("Hakuna", "Matata")
+
+# uncomment code from line 43-47 and try running it
+# Gives the following error:
+# Traceback (most recent call last):
+#   File "intro_functions.py", line 39, in <module>
+#     print_args("Hakuna", "Matata", "No Worries")
+#   File "intro_functions.py", line 36, in print_args
+#     arg1, arg2 = args
+# ValueError: too many values to unpack
+
+# def print_args(*args):
+# 	arg1, arg2 = args
+# 	print "arg1: %s and arg2: %s" %(arg1,arg2)
+
+# print_args("Hakuna", "Matata", "No Worries")
