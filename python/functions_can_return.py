@@ -22,3 +22,8 @@ print add(divide(100,5), (divide(add(2,10), subtract(10,4))))
 
 
 a = int(raw_input("Add numbers to add:"))
+
+
+# Every Python function returns a value; 
+# if the function ever executes a return statement, it will return that value, otherwise
+# it will return None, the Python null value.
